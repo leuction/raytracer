@@ -1,7 +1,7 @@
 use serde::{Deserialize, Deserializer, Serialize};
 use std::ops::{Add, Mul, Neg, Sub};
 
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize)]
 #[repr(C)]
 pub struct Vector3 {
   pub x: f64,
@@ -117,14 +117,3 @@ impl Neg for Vector3 {
   }
 }
 
-#[test]
-fn test_vector3() {
-  assert_eq!(
-    Vector3::from_one(1.0),
-    Vector3 {
-      x: 1.0,
-      y: 1.0,
-      z: 1.0,
-    }
-  );
-}
